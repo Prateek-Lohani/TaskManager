@@ -7,7 +7,7 @@ const TaskList = () => {
   const [newProjectDescription, setNewProjectDescription] = useState('');
   const [newTaskName, setNewTaskName] = useState('');
   const [viewInput, setViewInput] = useState(null); // Modified to hold projectId
-  // const [hoveredProjectId, setHoveredProjectId] = useState(null);
+   const [saveButton, setSaveButton] = useState(false);
   const [editProjectId, setEditProjectId] = useState(null);
   const [editTaskId, setEditTaskId] = useState(null);
   const [editProjectName, setEditProjectName] = useState('');
@@ -79,6 +79,7 @@ const TaskList = () => {
         setProjects(updatedProjects);
         setEditTaskId(null);
         setEditTaskName('');
+        setSaveButton(false);
       }
     }
   };
@@ -105,6 +106,12 @@ const TaskList = () => {
       setProjects(updatedProjects);
     }
   };
+
+  const editHandler=(id)=>{
+      setEditTaskId(id);
+      setSaveButton(true);
+      
+  }
 
   return (
     <div className='w-full h-full'>
@@ -169,13 +176,13 @@ const TaskList = () => {
                       {editTaskId === task.id ? (
                         <input value={editTaskName} onChange={(e) => setEditTaskName(e.target.value)} autoFocus />
                       ) : (
-                        <span onDoubleClick={() => setEditTaskId(task.id)}>
+                        <span onDoubleClick={() => editHandler(task.id)}>
                            - {task.name}
                         </span>
                       )}
                     </span>
                     <button className='px-2 flex py-1 justify-center items-center font-semibold rounded-lg bg-red-400' onClick={() => handleDeleteTask(project.id, task.id)}>x</button>
-                    <button className='px-2 flex py-1 justify-center items-center font-semibold rounded-lg bg-green-400' onClick={() => handleEditTaskName(project.id, task.id)}>Edit</button>
+                    {saveButton && <button className='px-2 flex py-1 justify-center items-center font-semibold rounded-lg bg-green-400' onClick={() => handleEditTaskName(project.id, task.id)}>Save</button>}
                   </li>
                 ))}
               </ul>
