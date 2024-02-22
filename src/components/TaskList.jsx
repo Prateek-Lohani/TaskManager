@@ -107,7 +107,8 @@ const TaskList = () => {
     }
   };
 
-  const editHandler=(id)=>{
+  const editHandler=(id,e)=>{
+      setEditTaskName(e.target.value);
       setEditTaskId(id);
       setSaveButton(true);
       
@@ -176,7 +177,7 @@ const TaskList = () => {
                       {editTaskId === task.id ? (
                         <input value={editTaskName} onChange={(e) => setEditTaskName(e.target.value)} autoFocus />
                       ) : (
-                        <span onDoubleClick={() => editHandler(task.id)}>
+                        <span onDoubleClick={(e) => editHandler(task.id,e)}>
                            - {task.name}
                         </span>
                       )}
