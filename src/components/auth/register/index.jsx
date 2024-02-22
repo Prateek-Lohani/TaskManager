@@ -59,6 +59,7 @@ const Register = () => {
                             <input
                                 disabled={isRegistering}
                                 type="password"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 autoComplete='new-password'
                                 required
                                 value={password} onChange={(e) => { setPassword(e.target.value) }}
