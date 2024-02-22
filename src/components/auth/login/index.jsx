@@ -76,7 +76,7 @@ const Login = () => {
                             {isSigningIn ? 'Signing In...' : 'Sign In'}
                         </button>
                     </form>
-                    <Link className='text-sm text-blue-600 underline text-right' to={'/register'}>Register New Account</Link>
+                    <Link className='text-sm text-blue-600 underline text-center' to={'/register'}>Register New Account</Link>
                    
                 </div>
             </main>
