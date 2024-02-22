@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+textarea{
+    border:none;
+    resize: none;
+    background-color: #ffffff;
+    color:whitesmoke;
+  }
+  
+  textarea:focus{
+    outline: none;
+  }

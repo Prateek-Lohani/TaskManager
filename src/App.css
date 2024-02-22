@@ -1,0 +1,10 @@
+textarea{
+  border:none;
+  resize: none;
+  background-color: #07575b;
+  color:whitesmoke;
+}
+
+textarea:focus{
+  outline: none;
+}
