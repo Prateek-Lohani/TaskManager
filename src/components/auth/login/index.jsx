@@ -8,7 +8,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isSigningIn, setIsSigningIn] = useState(false);
+    // const [isSigningIn, setIsSigningIn] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
     const onSubmit = async (e) => {
@@ -72,7 +72,7 @@ const Login = () => {
                             
                             className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isSigningIn ? 'bg-indigo-600' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
                         >
-                            {isSigningIn ? 'Signing In...' : 'Sign In'}
+                             Sign In
                         </button>
                     </form>
                     <Link className='text-sm text-blue-600 underline text-right' to={'/register'}>Register New Account</Link>
