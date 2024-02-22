@@ -9,26 +9,18 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isSigningIn, setIsSigningIn] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    
+    var errorMessage='';
 
     const onSubmit = async (e) => {
         e.preventDefault()
         if(!isSigningIn) {
             setIsSigningIn(true)
             await doSignInWithEmailAndPassword(email, password)
-            // doSendEmailVerification()
+            
         }
     }
 
-    const onGoogleSignIn = (e) => {
-        e.preventDefault()
-        if (!isSigningIn) {
-            setIsSigningIn(true)
-            doSignInWithGoogle().catch(err => {
-                setIsSigningIn(false)
-            })
-        }
-    }
 
     return (
         <div>

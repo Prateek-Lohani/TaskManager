@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { FaPen } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const TaskList = () => {
   const [projects, setProjects] = useState([]);
@@ -10,7 +7,7 @@ const TaskList = () => {
   const [newProjectDescription, setNewProjectDescription] = useState('');
   const [newTaskName, setNewTaskName] = useState('');
   const [viewInput, setViewInput] = useState(null); // Modified to hold projectId
-  const [hoveredProjectId, setHoveredProjectId] = useState(null);
+  // const [hoveredProjectId, setHoveredProjectId] = useState(null);
   const [editProjectId, setEditProjectId] = useState(null);
   const [editTaskId, setEditTaskId] = useState(null);
   const [editProjectName, setEditProjectName] = useState('');
@@ -173,7 +170,7 @@ const TaskList = () => {
                         <input value={editTaskName} onChange={(e) => setEditTaskName(e.target.value)} autoFocus />
                       ) : (
                         <span onDoubleClick={() => setEditTaskId(task.id)}>
-                          <FaPen /> {task.name}
+                           - {task.name}
                         </span>
                       )}
                     </span>
