@@ -109,6 +109,8 @@ const TaskList = () => {
 
   const editHandler=(id,e)=>{
       setEditTaskName(e.target.value);
+
+      console.log(editTaskName);
       setEditTaskId(id);
       setSaveButton(true);
       
