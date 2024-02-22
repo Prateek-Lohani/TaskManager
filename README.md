@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Task Manager
+
+### Funtionalities added-
+    1. Login/Register User
+    2. Add Project
+    3. Add Tasks in a Project
+    4. Edit the project details and Tasks Details
+    5. Logout
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
